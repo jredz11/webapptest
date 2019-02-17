@@ -2,7 +2,7 @@
 pipeline {
     agent {
         docker {
-            image 'maven:3-alpine' 
+            image 'openkbs/jre-mvn-py3' 
             args '-v /root/.m2:/root/.m2' 
         }
     }
