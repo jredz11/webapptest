@@ -9,7 +9,7 @@ class Common:
 
     @staticmethod
     def LoadConfig():
-        cfg_fn = os.path.join(os.path.dirname(os.path.abspath(__file__)) + "\edas.cfg")
+        cfg_fn = os.path.join(os.path.dirname(os.path.abspath(__file__)) + "/edas.cfg")
         required_ops = [("Base", "AccessKeyId"), ("Base", "AccessKeySecret"), ("Base", "Endpoint"), ("Base", "Region"), ("Base", "AppId"), ("Base", "OSSBucketName"), ("Base", "OSSEndpoint")]
         optional_ops = [("Optional", "SecurityToken")]
 
