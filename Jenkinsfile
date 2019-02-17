@@ -14,7 +14,7 @@ pipeline {
         }
       stage('Deliver') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                python './jenkins/scripts/EDAS.py $JENKINS_HOME/workspace/webapptest/target/webapptest.war'
             }
         }
     }
