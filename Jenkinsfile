@@ -3,7 +3,7 @@ pipeline {
     agent {
         docker {
             image 'openkbs/jre-mvn-py3' 
-            args '-u 0 -v /root/.m2:/root/.m2' 
+            args '-u 0 --name=mycontainer -v ./jenkins/scripts/:/root/.m2' 
         }
     }
     stages {
