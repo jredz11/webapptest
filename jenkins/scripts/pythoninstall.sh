@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-yum install python3
+zypper install python3
