@@ -3,7 +3,7 @@
 import sys
 import os
 import time
-import ConfigParser
+import configparser
 
 class Common:
 
@@ -13,7 +13,7 @@ class Common:
         required_ops = [("Base", "AccessKeyId"), ("Base", "AccessKeySecret"), ("Base", "Endpoint"), ("Base", "Region"), ("Base", "AppId"), ("Base", "OSSBucketName"), ("Base", "OSSEndpoint")]
         optional_ops = [("Optional", "SecurityToken")]
 
-        parser = ConfigParser.ConfigParser()
+        parser = configparser.ConfigParser()
         parser.read(cfg_fn)
         for sec,op in required_ops:
             if not parser.has_option(sec, op):
