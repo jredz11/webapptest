@@ -12,9 +12,14 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
-      stage('Deliver') {
+      stage('Python Install') {
             steps {
                 sh './jenkins/scripts/pythoninstall.sh'
+            }
+        }
+        stage('Deliver') {
+            steps {
+                sh './jenkins/scripts/deliver.sh'
             }
         }
     }
