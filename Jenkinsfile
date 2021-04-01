@@ -1,25 +1,20 @@
-
 pipeline {
-    agent {
-        docker {
-            image 'openkbs/jre-mvn-py3' 
-            args '-u 0 --name=mycontainer -v /home/bitnami/GitHub/webapptest/jenkins/scripts:/root/.m2' 
-        }
-    }
+    agent any
+
     stages {
-        stage('Build') { 
+        stage('Build') {
             steps {
-                sh 'mvn -B -DskipTests clean package' 
+                echo 'Building..'
             }
         }
-      stage('Python Install') {
+        stage('Test') {
             steps {
-                sh './jenkins/scripts/pythoninstall.sh'
+                echo 'Testing..'
             }
         }
-        stage('Deliver') {
+        stage('Deploy') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                echo 'Deploying....'
             }
         }
     }
